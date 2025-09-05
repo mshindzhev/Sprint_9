@@ -45,10 +45,10 @@ class BasePage:
     def get_text_to_element(self, element):
         return self.find_element_with_wait(element).text
 
-    def drag_and_drop_element(self, source_element, target_element):
-        element_source = self.driver.find_element(*source_element)
-        element_target = self.driver.find_element(*target_element)
-        drag_and_drop(self.driver, element_source, element_target)
+    # def drag_and_drop_element(self, source_element, target_element):
+    #     element_source = self.driver.find_element(*source_element)
+    #     element_target = self.driver.find_element(*target_element)
+    #     drag_and_drop(self.driver, element_source, element_target)
 
     def press_esc(self):
         action = ActionChains(self.driver)
