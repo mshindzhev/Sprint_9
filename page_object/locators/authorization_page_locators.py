@@ -9,6 +9,4 @@ class AuthorizationPageLocators:
                    ".//*[@class='style_button__1FFWl styles_button__1jD3X style_button_style_dark-blue__1cpq7']")
     BUTTON_LOGOUT = (By.XPATH,
                     ".//*[text()='Выход']")
-    HEADER_RECIPE = (By.XPATH,
-                     ".//*[@class='styles_title__2fhty'][text()='Рецепты']")
 
