@@ -26,11 +26,10 @@ services:
     build: .
     container_name: test_docker
     depends_on:
-      - selenoid
+      selenoid:
+        condition: service_started
     networks:
       - selenoid
-    environment:
-      - SELENOID_ENABLED=true
     command: ["pytest", "-v"]
 
 networks:
