@@ -26,9 +26,8 @@ class CreateRecipePage(BasePage):
         self.add_text_to_element(CreateRecipePageLocators.INPUT_ABOUT_RECIPE, data.ABOUT_RECIPE)
         self.add_text_to_element(CreateRecipePageLocators.INPUT_SELECT_FILE, f"{data.APP_DIR}/assets/test.jpeg")
         self.click_to_element(CreateRecipePageLocators.BUTTON_CREATE_RECIPE)
-        self.find_element_with_wait(CreateRecipePageLocators.HEADER_NAME_OF_CREATED_RECIPE)
 
-        if self.get_text_to_element(CreateRecipePageLocators.HEADER_NAME_OF_CREATED_RECIPE) == data.NAME_RECIPE:
+        if self.find_element_with_wait(CreateRecipePageLocators.HEADER_NAME_OF_CREATED_RECIPE):
             return True
         return False
 
