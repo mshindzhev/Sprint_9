@@ -1,5 +1,4 @@
 services:
-
   selenoid:
     image: "aerokube/selenoid"
     container_name: selenoid
@@ -15,7 +14,7 @@ services:
   selenoid-ui:
     image: "aerokube/selenoid-ui:latest"
     container_name: selenoid-ui
-    links:
+    depends_on:
       - selenoid
     ports:
       - "8081:8080"
@@ -30,8 +29,9 @@ services:
       - selenoid
     networks:
       - selenoid
-    tty: true
-    command: ["pytest"]
+    environment:
+      - SELENOID_ENABLED=true
+    command: ["pytest", "-v"]
 
 networks:
   selenoid:
